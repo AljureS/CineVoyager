@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat+Subrayada:wght@400;700&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat+Subrayada:wght@400;700&family=Rubik+Mono+One&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+body{
+    width: 100%;
+    height: 100%;
+    --s: 84px;
+    --c1: #ffffff;
+    --c2: #ececec;
+    --c3: #dad8d8;
+
+    --_g: 0 120deg, #0000 0;
+    background: conic-gradient(
+        from 0deg at calc(500% / 6) calc(100% / 3),
+        var(--c3) var(--_g)
+    ),
+    conic-gradient(
+        from -120deg at calc(100% / 6) calc(100% / 3),
+        var(--c2) var(--_g)
+    ),
+    conic-gradient(
+        from 120deg at calc(100% / 3) calc(500% / 6),
+        var(--c1) var(--_g)
+    ),
+    conic-gradient(
+        from 120deg at calc(200% / 3) calc(500% / 6),
+        var(--c1) var(--_g)
+    ),
+    conic-gradient(
+        from -180deg at calc(100% / 3) 50%,
+        var(--c2) 60deg,
+        var(--c1) var(--_g)
+    ),
+    conic-gradient(
+        from 60deg at calc(200% / 3) 50%,
+        var(--c1) 60deg,
+        var(--c3) var(--_g)
+    ),
+    conic-gradient(
+        from -60deg at 50% calc(100% / 3),
+        var(--c1) 120deg,
+        var(--c2) 0 240deg,
+        var(--c3) 0
+    );
+  background-size: calc(var(--s) * 1.732) var(--s);
+
+}
+
+#tituloPrincial{
+    margin-top: 0.3em;
+    color: black;
+    font-family: "Montserrat Subrayada", sans-serif;
+    font-weight: 900;
+    font-size: 2.5em;
+    display: flex;
+    justify-content: center;
+}
+
+
+.card__title{
+    font-family: "Source Sans 3", sans-serif;
+    margin: 0;
+}
+
+#movieTitle{
+    font-family: "Montserrat Subrayada", sans-serif;
+    font-weight: 450;
+    font-size: 1.2em;
+    margin: 0;
+    
+}
+
+nav{
+    width: 100%;
+}
+#logo{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+}
+#barraDeNavegacionPrincipal{
+    border-bottom: solid 1px #ffffff;
+    margin-bottom: 0em;
+    background-color: rgba(255, 255, 255, 0.671);
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+}
+
+#barraDeNavegacionPrincipal ul{
+    font-family: "Montserrat Subrayada", sans-serif;
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+#barraDeNavegacionPrincipal ul li a{
+    font-size: 1.1em;
+    text-decoration: none;
+    color: black;
+}
+#barraDeNavegacionPrincipal ul li a:hover{
+    text-decoration: none;
+    border: 1px solid rgb(128, 128, 128);
+    color: black;
+    font-weight: 900; 
+}
+
+#allMoviesCards{
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+    
+}
+
+.card__content {
+    padding-top: 10px ;
+    box-sizing: border-box;
+    width: 320px;
+    height: fit-content;
+    background: rgba(255, 255, 255, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    /* backdrop-filter: blur(6px); */
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    
+    user-select: none;
+    /* font-weight: bolder; */
+    color: black;
+}
+
+.card__content:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+}
+
+.card__content:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+
+.imageMovies{
+    height: 300px;
+    margin-bottom: 0.5em;
+}
+
+footer{
+    font-family: "Source Sans 3", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em;
+}
+
+@media(max-width: 1000px){
+    #allMoviesCards{ 
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .card__content{
+        margin-bottom: 18px;
+    }
+
+    
+}
+
+@media(max-width: 700px){
+    #barraDeNavegacionPrincipal ul{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    #barraDeNavegacionPrincipal ul li {
+        margin-top: 10px;
+    }
+}
+/* Diseño para añadir peliculas  */
+#formAddMovie {
+    --input-focus: #2d8cf0;
+    --font-color: #323232;
+    --font-color-sub: #666;
+    --bg-color: #fff;
+    --main-color: #323232;
+    padding: 20px;
+    background: rgba(231, 231, 231, 0.774);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    margin-left: 16vw;
+    margin-right: 16vw;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.599);
+}
+
+.titleForm {
+    color: var(--font-color);
+    font-weight: 900;
+    font-size: 20px;
+    display: grid;
+    justify-items: center;
+}
+
+.titleForm span {
+    color: var(--font-color-sub);
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.subTitleForm{
+    width: 50vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input {
+    width: 50vw;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--font-color);
+    padding: 5px 10px;
+    outline: none;
+}
+
+.input::placeholder {
+    color: var(--font-color-sub);
+    opacity: 0.8;
+}
+
+.input:focus {
+    border: 2px solid var(--input-focus);
+}
+
+.login-with {
+    display: flex;
+    gap: 20px;
+}
+
+.button-log {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    color: var(--font-color);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: var(--main-color);
+}
+
+.buttonConfirm:hover {
+    box-shadow: 0px 0px var(--main-color);
+    
+    transform: translate(3px, 3px);
+}
+
+.buttonConfirm:active {
+    box-shadow: 0px 0px var(--main-color);
+    transform: translate(3px, 3px);
+    transform: scale(1.05);
+    background: #0808085e;
+}
+
+.buttonConfirm {
+    margin: 10px 2px 0 2px;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid var(--main-color);
+    background-color: var(--bg-color);
+    box-shadow: 4px 4px var(--main-color);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--font-color);
+    cursor: pointer;
+}
+/* Fin del disseño mpaa añadir peliculas  */
+
+/* Info about me  */
+#seccionBienvenida{
+    font-size: 1.2em;
+    margin-left: 5em;
+    width: 90vw;
+    padding: 3em;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: #ffffff77;
+    border-radius: 20px;
+    box-shadow: 15px 15px 51px rgba(0, 0, 0, 0.599);
+}
+.imagenMia{
+    width: 12vw;
+    margin-right: 1em;
+    box-sizing: border-box;
+    height: auto;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+}
+
+.imagenMia:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+}
+
+.imagenMia:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+}
+
+
+/* seccion sobre el proyecto */
+
+.imagenTec{
+    width: 200px;
+}
+.tecnologiasFav{
+    width: fit-content;
+    padding: 1em 2em 1em 2em;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+.tecnologiasFav:hover{
+    font-weight: bolder;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    transform: scale(1.05);
+    width: fit-content;
+    padding: 1em 2em 1em 2em;
+
+    transition: 1s;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+#seccionTecnologias {
+    width: 90vw;
+    margin: auto;
+    background-color: #ebebeb9a;
+    margin-top: 1.5em;
+    border: 3px solid whitesmoke;
+    border-radius: 50px;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 15px 15px 51px rgba(0, 0, 0, 0.599);
+}
+
+#connectFronTBackDB{
+    width: 90vw;
+    margin: auto;
+    background-color: #ebebeb9a;
+    margin-top: 1.5em;
+    border: 3px solid whitesmoke;
+    border-radius: 50px;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 15px 15px 51px rgba(0, 0, 0, 0.599);
+    
+}
