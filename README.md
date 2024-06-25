@@ -13,8 +13,8 @@ Welcome to the Movie Catalog project repository, a fullstack web application des
  - Communication: Axios for HTTP requests
 
 ## Contact:
-Email: saidsimon2@gmail.com
-LinkedIn: ing-fullstack-said-aljure
+- Email: saidsimon2@gmail.com
+- [LinkedIn](https://www.linkedin.com/in/webdeveloper-saljure/)
 
 ## Getting Started 🚀
 Prerequisites
